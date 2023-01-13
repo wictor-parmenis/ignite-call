@@ -6,4 +6,10 @@ declare module 'next-auth' {
         username: string
         email: string
     }
+
+
+  interface Session {
+    user: User
+  }
 }
+
