@@ -15,6 +15,10 @@ const ConnectCalendar: React.FC = () => {
 
   //   async function handleRegister(data: IRegisterFormSchema) {}
 
+  async function handleNavigateToNextStep() {
+    await router.push('/register/time-intervals')
+  }
+
   return (
     <Container>
       <Header>
@@ -47,7 +51,11 @@ const ConnectCalendar: React.FC = () => {
             configurações de acesso ao Google Calendar.
           </AuthError>
         )}
-        <Button type="submit" disabled={!isAuthenticated}>
+        <Button
+          onClick={handleNavigateToNextStep}
+          type="submit"
+          disabled={!isAuthenticated}
+        >
           Próximo passo <ArrowRight />
         </Button>
       </ConnectBox>
